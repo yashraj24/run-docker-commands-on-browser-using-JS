@@ -1,0 +1,28 @@
+<script>
+function lw(){
+
+	var i = document.getElementById("in1").value;
+
+	var xhr = new XMLHttpRequest();
+	//xhr.onload
+	xhr.open("GET" , "http://192.168.0.103/cgi-bin/js.py?x=" + i , true);
+
+	xhr.send();
+
+	// output from above url
+	xhr.onload = function lw1(){
+			var output = xhr.responseText;
+			document.getElementById("d1").innerHTML = output;
+			}
+}
+</script>
+
+Enter your cmd : <input id="in1" />
+<br />
+
+<pre>
+<div id="d1">output will be shown here</div>
+</pre>
+
+<button onclick="lw();">Click</button>
+
